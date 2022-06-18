@@ -1,0 +1,25 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "browserslist": ["> 0.5%", "last 2 versions", "not dead"],
+  "scripts": {
+    "start": "parcel index.hbs -p 3000",
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tegArt/middle.messenger.praktikum.yandex.git"
+  },
+  "author": "Dmitry Sazonov",
+  "license": "ISC",
+  "devDependencies": {
+    "@anikin/parcel-transformer-handlebars": "^1.0.9",
+    "parcel": "^2.6.1"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
