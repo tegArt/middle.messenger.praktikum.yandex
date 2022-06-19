@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "parcel index.hbs -p 3000",
-    "build": "parcel build index.hbs --dist-dir static --public-url ./"
+    "build": "parcel build index.hbs --public-url ./"
   },
   "repository": {
     "type": "git",
