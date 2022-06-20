@@ -7,9 +7,11 @@
     "last 2 versions",
     "not dead"
   ],
+  "source": "src/index.html",
   "scripts": {
+    "dev": "parcel src/index.html -p 3000",
     "start": "npm run build && node server/index.js",
-    "build": "parcel build index.hbs --public-url ./"
+    "build": "parcel build src/index.html --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "@anikin/parcel-transformer-handlebars": "^1.0.2",
     "@parcel/transformer-sass": "^2.6.1",
     "parcel": "^2.6.1",
+    "parcel-plugin-clean-dist": "^0.0.6",
     "sass": "^1.52.3"
   },
   "dependencies": {
