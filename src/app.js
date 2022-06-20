@@ -5,7 +5,7 @@ const root = document.getElementById('root')
 
 const context = {
     title: "Заголовок",
-    text: 'Пробный текст hook test'
+    text: 'Пробный текст hook test 2'
 }
 const html = mainTpl(context)
 
