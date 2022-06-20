@@ -1,4 +1,5 @@
 import mainTpl from './layout/main/main.hbs'
+import './styles.scss'
 
 const root = document.getElementById('root')
 
