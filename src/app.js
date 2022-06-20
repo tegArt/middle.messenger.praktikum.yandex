@@ -10,3 +10,5 @@ const context = {
 const html = mainTpl(context)
 
 root.innerHTML = html
+
+// hook test
