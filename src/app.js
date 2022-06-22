@@ -1,14 +1,16 @@
 import mainTpl from './layout/main/main.hbs'
+import './components/button'
 import './styles.scss'
 
 const root = document.getElementById('root')
 
-const context = {
-    title: "Заголовок 1",
-    text: 'Пробный текст hook test 9:19'
-}
-const html = mainTpl(context)
+const html = mainTpl({
+    title: 'Титл',
+    text: 'probe',
+    btn: {
+        text: 'ссыль',
+        link: '#12'
+    }
+})
 
 root.innerHTML = html
-
-// hook test 234 :(

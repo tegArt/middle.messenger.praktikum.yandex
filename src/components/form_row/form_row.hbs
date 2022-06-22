@@ -1,0 +1,11 @@
+<div class="form-row">
+    <input
+        type="text"
+        name="{{fieldName}}"
+        value="{{value}}"
+        class="form-field {{#if isError}}-error{{/if}}"
+        {{#if required}}required{{/if}}
+    />
+    <div class="placeholder">Логин</div>
+    <div class="form-note {{#if isError}}-error{{/if}}">{{note}}</div>
+</div>

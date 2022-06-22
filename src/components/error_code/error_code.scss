@@ -1,0 +1,14 @@
+.error-code {
+  position: relative;
+  display: flex;
+  margin: 0 0 8px;
+  color: #f00;
+  font-size: 48px;
+  font-weight: 700;
+
+  .-broken {
+    position: relative;
+    top: 10px;
+    transform: rotateZ(40deg);
+  }
+}

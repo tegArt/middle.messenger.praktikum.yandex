@@ -1,3 +1,4 @@
-import main from './main'
+import mainLayoutTpl from './main.hbs'
+import './main.scss'
 
-export default main
+Handlebars.registerPartial('MainLayout', mainLayoutTpl)

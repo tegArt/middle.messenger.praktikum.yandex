@@ -1,0 +1,24 @@
+.profile {
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  &-value {
+    color: #999;
+  }
+
+  &-nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 40px 0 0;
+  }
+}

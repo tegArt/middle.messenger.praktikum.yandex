@@ -1,0 +1,9 @@
+<div class="error-code">
+    {{#each numbers}}
+        <span
+            {{#if @last}}
+                {{#if ../isBroken}}class="-broken"{{/if}}
+            {{/if}}
+        >{{this}}</span>
+    {{/each}}
+</div>
