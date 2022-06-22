@@ -1,3 +1,4 @@
+import Handlebars from 'handlebars'
 import mainLayoutTpl from './main.hbs'
 import './main.scss'
 
