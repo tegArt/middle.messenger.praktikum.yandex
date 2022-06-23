@@ -8,7 +8,7 @@
 
 - `npm install` — установка
 - `npm run dev` — запуск для разработки с вотчером
-- `npm run start` — запуск версии для разработчика
+- `npm run start` — запуск с Express
 - `npm run build` — сборка стабильной версии
 
 ## Спринт 1

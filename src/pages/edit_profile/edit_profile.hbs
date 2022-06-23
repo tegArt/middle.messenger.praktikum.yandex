@@ -1,6 +1,8 @@
 {{#> MainLayout}}
+    {{> ProfileAvatar profileAvatar }}
+
     {{#> Heading heading}}
-        Регистрация
+        {{name}}
     {{/Heading}}
 
     {{#> Form}}
@@ -10,7 +12,7 @@
 
         {{#> FormButtons }}
             {{> Button button }}
-            <a href="/">Уже есть аккаунт?</a>
+            <a href="/?page=profile">Отменить и вернуться в профиль</a>
         {{/FormButtons}}
     {{/Form}}
 {{/MainLayout}}
