@@ -1,6 +1,26 @@
-.chat-wrapper {
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
-  height: 100%;
+.chat {
+  &-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  &-sidebar {
+    flex: 0 0 320px;
+    background: #f8fafd;
+  }
+
+  &-area {
+    flex: 1 1 100%;
+    padding: 0 28px
+  }
+
+  &-history {
+    height: calc(100% - 56px);
+  }
+
+  &-actions {
+    padding: 12px 0;
+  }
 }

@@ -1,10 +1,14 @@
 import Handlebars from 'handlebars'
+import './helpers'
 
 import './layout/main'
 import './layout/chat'
 
 import './pages/sign_in'
-import './pages/error_page'
+import './pages/sign_up'
+import './pages/chat_list'
+import './pages/error_404'
+import './pages/error_500'
 
 import './components/button'
 import './components/error_code'
@@ -17,56 +21,15 @@ import './components/profile_row'
 
 import './scss/common.scss'
 
-Handlebars.registerHelper('if_eq', function(a, b, options) {
-    return (a == b) ? options.fn(this) : options.inverse(this)
-})
+import mock from './mocks'
 
 const root = document.getElementById('root')
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
-let page
-let pageHTML = 'something went wrong'
+const page = urlParams.has('page') ? urlParams.get('page') : 'signIn'
 
-const mock = {
-    signIn: {
-        heading: {
-            type: 'h1',
-            isCentered: true
-        },
-        fields: [
-            {
-                name: 'login',
-                value: '',
-                required: true,
-                placeholder: 'Логин'
-            },
-            {
-                name: 'password',
-                value: '',
-                required: true,
-                placeholder: 'Пароль'
-            }
-        ],
-        button: {
-            text: 'Войти',
-            isFullWidth: true
-        }
-    }
-}
+const templateName = `${page.charAt(0).toUpperCase()}${page.slice(1)}Page`
 
-if (urlParams.has('page')) {
-    page = urlParams.get('page')
-} else {
-    page = "signIn"
-}
+let compiledTemplate = Handlebars.compile(`{{> ${templateName} }}`)
 
-switch (page) {
-    case 'signIn':
-        const tpl = Handlebars.compile(`{{> SignInPage }}`)
-        pageHTML = tpl(mock.signIn)
-        break
-    default:
-        console.log(page)
-}
-
-root.innerHTML = pageHTML
+root.innerHTML = compiledTemplate(mock[page])
