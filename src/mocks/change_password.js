@@ -10,21 +10,21 @@ export default {
     },
     fields: [
         {
-            name: 'password',
+            name: 'oldPassword',
             isPassword: true,
             value: '',
             required: true,
             placeholder: 'Пароль'
         },
         {
-            name: 'password',
+            name: 'newPassword',
             isPassword: true,
             value: '',
             required: true,
             placeholder: 'Новый пароль'
         },
         {
-            name: 'password',
+            name: 'passwordRepeat',
             isPassword: true,
             value: '',
             required: true,

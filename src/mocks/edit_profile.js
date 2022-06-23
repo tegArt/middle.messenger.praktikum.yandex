@@ -10,7 +10,7 @@ export default {
     },
     fields: [
         {
-            name: 'login',
+            name: 'email',
             value: 'ilon@tothemars.com',
             required: true,
             placeholder: 'Почта'
@@ -22,19 +22,25 @@ export default {
             placeholder: 'Логин'
         },
         {
-            name: 'login',
+            name: 'first_name',
             value: 'Илон',
             required: true,
             placeholder: 'Имя'
         },
         {
-            name: 'login',
+            name: 'second_name',
             value: 'Маск',
             required: true,
             placeholder: 'Фамилия'
         },
         {
-            name: 'login',
+            name: 'display_name',
+            value: 'IlonMusk007',
+            required: true,
+            placeholder: 'Отображаемое имя'
+        },
+        {
+            name: 'phone',
             value: '+7 123 456 789',
             required: true,
             placeholder: 'Телефон'

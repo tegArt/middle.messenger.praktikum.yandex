@@ -5,7 +5,7 @@ export default {
     },
     fields: [
         {
-            name: 'login',
+            name: 'email',
             value: '',
             required: true,
             placeholder: 'Почта'
@@ -17,19 +17,19 @@ export default {
             placeholder: 'Логин'
         },
         {
-            name: 'login',
+            name: 'first_name',
             value: '',
             required: true,
             placeholder: 'Имя'
         },
         {
-            name: 'login',
+            name: 'second_name',
             value: '',
             required: true,
             placeholder: 'Фамилия'
         },
         {
-            name: 'login',
+            name: 'phone',
             value: '',
             required: true,
             placeholder: 'Телефон'
@@ -42,7 +42,7 @@ export default {
             placeholder: 'Пароль'
         },
         {
-            name: 'password',
+            name: 'password_repeat',
             isPassword: true,
             value: '',
             required: true,
