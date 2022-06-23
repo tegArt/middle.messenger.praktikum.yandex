@@ -1,0 +1,15 @@
+{{#> Heading heading}}
+    Авторизуйтесь
+{{/Heading}}
+
+{{#> Form}}
+    {{#each fields}}
+        {{> FormRow this }}
+    {{/each}}
+
+
+    {{#> FormButtons }}
+        {{> Button button }}
+        <a href="/?page=register">Зарегистрироваться</a>
+    {{/FormButtons}}
+{{/Form}}

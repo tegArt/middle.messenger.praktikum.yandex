@@ -1,11 +1,11 @@
-{{#if eq type 'h1'}}
+{{#if_eq type 'h1'}}
     <h1 class="{{#if isCentered}}-centered{{/if}} {{#if isLight}}-light{{/if}} {{#if isNoMargin}}-no-margin{{/if}}">
 {{else}}
     <h2 class="{{#if isCentered}}-centered{{/if}} {{#if isLight}}-light{{/if}} {{#if isNoMargin}}-no-margin{{/if}}">
-{{/if}}
+{{/if_eq}}
     {{> @partial-block }}
-{{#if type='h1'}}
+{{#if_eq type 'h1'}}
     </h1>
 {{else}}
     </h2>
-{{/if}}
+{{/if_eq}}
