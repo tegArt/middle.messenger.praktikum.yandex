@@ -1,0 +1,36 @@
+.profile-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 22px;
+  text-align: center;
+  background: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+
+  .change-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .3s ease;
+
+    &:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

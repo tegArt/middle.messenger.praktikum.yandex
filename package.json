@@ -1,0 +1,39 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel src/index.html -p 3000",
+    "start": "npm run build && node server/index.js",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tegArt/middle.messenger.praktikum.yandex.git"
+  },
+  "author": "Dmitry Sazonov",
+  "license": "ISC",
+  "engines": {
+    "node": ">=12"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
+    "handlebars": "^4.7.7",
+    "parcel": "^2.6.1",
+    "parcel-plugin-clean-dist": "^0.0.6",
+    "parcel-reporter-static-files-copy": "^1.3.4",
+    "parcel-transformer-hbs": "^1.0.4"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "staticFiles": {
+    "staticPath": "static"
+  }
+}

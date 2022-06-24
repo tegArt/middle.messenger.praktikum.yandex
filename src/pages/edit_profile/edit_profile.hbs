@@ -1,0 +1,18 @@
+{{#> MainLayout}}
+    {{> ProfileAvatar profileAvatar }}
+
+    {{#> Heading heading}}
+        {{name}}
+    {{/Heading}}
+
+    {{#> Form}}
+        {{#each fields}}
+            {{> FormRow this }}
+        {{/each}}
+
+        {{#> FormButtons }}
+            {{> Button button }}
+            <a href="/?page=profile">Отменить и вернуться в профиль</a>
+        {{/FormButtons}}
+    {{/Form}}
+{{/MainLayout}}

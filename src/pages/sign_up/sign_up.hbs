@@ -1,0 +1,16 @@
+{{#> MainLayout}}
+    {{#> Heading heading}}
+        Регистрация
+    {{/Heading}}
+
+    {{#> Form}}
+        {{#each fields}}
+            {{> FormRow this }}
+        {{/each}}
+
+        {{#> FormButtons }}
+            {{> Button button }}
+            <a href="/">Уже есть аккаунт?</a>
+        {{/FormButtons}}
+    {{/Form}}
+{{/MainLayout}}

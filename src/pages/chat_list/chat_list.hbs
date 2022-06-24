@@ -1,0 +1,26 @@
+{{#> ChatLayout}}
+    <aside class="chat-sidebar">
+        sidebar
+    </aside>
+
+    <main class="chat-area">
+        <section class="chat-history">
+            история переписки<br />
+            <h2>Страницы:</h2>
+            <ul>
+                <li><a href="/">Вход</a></li>
+                <li><a href="/?page=signUp">Регистрация</a></li>
+                <li>Список чата/чат - тут заглушка</li>
+                <li><a href="/?page=error404">Ошибка 404</a></li>
+                <li><a href="/?page=error500">Ошибка 500</a></li>
+                <li><a href="/?page=profile">Профиль</a></li>
+                <li><a href="/?page=editProfile">Редактирование профиля</a></li>
+                <li><a href="/?page=changePassword">Изменить пароль</a></li>
+            </ul>
+        </section>
+
+        <section class="chat-actions">
+            поле ввода и отправки сообщения <input type="text" name="message" value="для возможных автопроверок" />
+        </section>
+    </main>
+{{/ChatLayout}}

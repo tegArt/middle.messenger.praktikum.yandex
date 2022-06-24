@@ -1,0 +1,22 @@
+h1, h2 {
+  margin: 0 0 32px;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+
+  &.-light {
+    font-weight: 300;
+  }
+
+  &.-no-margin {
+    margin: 0;
+  }
+
+  &.-centered {
+    text-align: center;
+  }
+}
+
+h2 {
+  font-size: 16px;
+}

@@ -1,0 +1,16 @@
+{{#> MainLayout}}
+    {{#> Heading heading}}
+        Авторизуйтесь
+    {{/Heading}}
+
+    {{#> Form}}
+        {{#each fields}}
+            {{> FormRow this}}
+        {{/each}}
+
+        {{#> FormButtons}}
+            {{> Button button}}
+            <a href="/?page=signUp">Зарегистрироваться</a>
+        {{/FormButtons}}
+    {{/Form}}
+{{/MainLayout}}
