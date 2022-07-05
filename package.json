@@ -11,8 +11,14 @@
   "scripts": {
     "dev": "parcel src/index.html -p 3000",
     "start": "npm run build && node server/index.js",
-    "build": "parcel build src/index.html --public-url ./"
+    "build": "parcel build src/index.html --public-url ./",
+    "stylelint": "stylelint \"./src/{**/*,*}.{css,scss}\" --fix",
+    "eslint": "eslint . --fix"
   },
+  "pre-commit": [
+    "stylelint",
+    "eslint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tegArt/middle.messenger.praktikum.yandex.git"
@@ -23,15 +29,22 @@
     "node": ">=12"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.2",
-    "handlebars": "^4.7.7",
-    "parcel": "^2.6.1",
-    "parcel-plugin-clean-dist": "^0.0.6",
-    "parcel-reporter-static-files-copy": "^1.3.4",
-    "parcel-transformer-hbs": "^1.0.4"
+    "@typescript-eslint/eslint-plugin": "5.30.5",
+    "@typescript-eslint/parser": "5.30.5",
+    "eslint": "8.19.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "handlebars": "4.7.7",
+    "parcel": "2.6.1",
+    "parcel-plugin-clean-dist": "0.0.6",
+    "parcel-reporter-static-files-copy": "1.3.4",
+    "parcel-transformer-hbs": "1.0.4",
+    "pre-commit": "1.2.2",
+    "stylelint": "14.9.1",
+    "stylelint-config-standard-scss": "4.0.0"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "4.18.1"
   },
   "staticFiles": {
     "staticPath": "static"

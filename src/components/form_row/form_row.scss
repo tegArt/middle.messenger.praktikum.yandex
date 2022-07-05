@@ -20,7 +20,7 @@
     height: 32px;
     margin: 14px 0 0;
     padding: 0 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 14px;
     color: #111;
     background: #f5f9ff;
@@ -44,7 +44,7 @@
   top: 14px;
   font-size: 14px;
   line-height: 32px;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   pointer-events: none;
 
   .form-field:focus ~ &,

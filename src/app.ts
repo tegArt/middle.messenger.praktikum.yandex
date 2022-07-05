@@ -33,6 +33,6 @@ const page = urlParams.has('page') ? urlParams.get('page') : 'signIn'
 
 const templateName = `${page.charAt(0).toUpperCase()}${page.slice(1)}Page`
 
-let compiledTemplate = Handlebars.compile(`{{> ${templateName} }}`)
+const compiledTemplate = Handlebars.compile(`{{> ${templateName} }}`)
 
 root.innerHTML = compiledTemplate(mock[page])
