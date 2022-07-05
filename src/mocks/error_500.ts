@@ -1,6 +1,6 @@
 export default {
-    errorCode: {
-        numbers: [5, 0, 0],
-        isBroken: true
-    }
+  errorCode: {
+    numbers: [5, 0, 0],
+    isBroken: true,
+  },
 }

@@ -1,33 +1,33 @@
 export default {
+  name: 'Илон',
+  profileAvatar: {
     name: 'Илон',
-    profileAvatar: {
-        name: 'Илон',
-        canChange: true
+    canChange: true,
+  },
+  heading: {
+    type: 'h2',
+    isCentered: true,
+  },
+  fields: [
+    {
+      label: 'Почта',
+      value: 'ilon@tothemars.com',
     },
-    heading: {
-        type: 'h2',
-        isCentered: true
+    {
+      label: 'Логин',
+      value: 'IlonMusk007',
     },
-    fields: [
-        {
-            label: 'Почта',
-            value: 'ilon@tothemars.com'
-        },
-        {
-            label: 'Логин',
-            value: 'IlonMusk007'
-        },
-        {
-            label: 'Имя',
-            value: 'Илон'
-        },
-        {
-            label: 'Фамилия',
-            value: 'Маск'
-        },
-        {
-            label: 'Телефон',
-            value: '+7 123 456 789'
-        }
-    ]
+    {
+      label: 'Имя',
+      value: 'Илон',
+    },
+    {
+      label: 'Фамилия',
+      value: 'Маск',
+    },
+    {
+      label: 'Телефон',
+      value: '+7 123 456 789',
+    },
+  ],
 }
