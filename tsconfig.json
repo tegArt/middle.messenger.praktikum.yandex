@@ -8,6 +8,9 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "strictNullChecks": false,
+    "target": "es6",
+    "moduleResolution": "node",
+    "moduleSuffixes": [".ios", ".native", ""]
   },
   "exclude": [
     "dist",
