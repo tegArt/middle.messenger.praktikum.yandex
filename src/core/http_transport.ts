@@ -20,7 +20,7 @@ const METHODS = {
   DELETE: 'DELETE',
 }
 
-function queryStringify(data) {
+function queryStringify(data: Data) {
   let queryString = '?'
 
   Object.keys(data).forEach((key) => {

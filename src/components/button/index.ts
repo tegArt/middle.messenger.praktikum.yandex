@@ -1,5 +1,27 @@
-import Handlebars from 'handlebars'
-import buttonTpl from './button.hbs'
+import Component from '../../core/component'
 import './button.scss'
 
-Handlebars.registerPartial('Button', buttonTpl)
+interface ButtonProps {
+  text: string,
+  isFullWidth?: boolean
+}
+
+export default class Button extends Component {
+  constructor(props: ButtonProps) {
+    super('div', props)
+  }
+
+  render(): string {
+    return `
+      <input
+          type="submit"
+          value="{{text}}"
+          class="button {{#if isFullWidth}}-full-width{{/if}}"
+          {{#if disabled}}disabled{{/if}}
+          {{#unless disabled}}
+              {{#if clickHandler}}onClick="{{clickHandler}}"{{/if}}
+          {{/unless}}
+      />
+    `
+  }
+}

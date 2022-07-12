@@ -1,4 +1,15 @@
-import Handlebars from 'handlebars'
-import signInPageTpl from './sign_in.hbs'
+import Component from '../../core/component'
 
-Handlebars.registerPartial('SignInPage', signInPageTpl)
+export default class SignInPage extends Component {
+  constructor(props) {
+    super('div', props)
+  }
+
+  render(): string {
+    return `
+      {{ text }}
+      {{{ heading }}}
+      {{ button }}
+    `
+  }
+}

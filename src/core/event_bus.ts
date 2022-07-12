@@ -1,10 +1,10 @@
-type CallbackFunction = (...args: any[]) => void;
+type CallbackFunction = (...args: unknown[]) => void;
 
 interface Listeners {
   [key: string]: CallbackFunction[]
 }
 
-export default class Mediator {
+export default class EventBus {
   listeners: Listeners
 
   constructor() {
