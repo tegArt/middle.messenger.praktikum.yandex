@@ -15,7 +15,7 @@ export default class Heading extends Component {
 
   render(): string {
     return `
-      {{ text }}
+      {{text}}
     `
   }
 }

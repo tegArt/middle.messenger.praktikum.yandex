@@ -3,7 +3,8 @@ import './button.scss'
 
 interface ButtonProps {
   text: string,
-  isFullWidth?: boolean
+  isFullWidth?: boolean,
+  disabled?: boolean
 }
 
 export default class Button extends Component {

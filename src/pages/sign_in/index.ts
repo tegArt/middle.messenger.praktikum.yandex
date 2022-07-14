@@ -10,6 +10,9 @@ export default class SignInPage extends Component {
       {{ text }}
       {{{ heading }}}
       {{ button }}
+      {{{ avatar }}}
+      {{{ profileRow }}}
+      {{{ error }}}
     `
   }
 }
