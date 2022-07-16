@@ -1,28 +1,22 @@
-import Component from '../../core/component'
 import './button.scss'
+import Component from '../../core/component'
 
 interface ButtonProps {
   text: string,
   isFullWidth?: boolean,
-  disabled?: boolean
+  events?: Object
 }
 
 export default class Button extends Component {
   constructor(props: ButtonProps) {
-    super('div', props)
+    const className = props.isFullWidth ? 'button -full-width' : 'button'
+
+    super('button', {...props, className})
   }
 
   render(): string {
     return `
-      <input
-          type="submit"
-          value="{{text}}"
-          class="button {{#if isFullWidth}}-full-width{{/if}}"
-          {{#if disabled}}disabled{{/if}}
-          {{#unless disabled}}
-              {{#if clickHandler}}onClick="{{clickHandler}}"{{/if}}
-          {{/unless}}
-      />
+      {{ text }}
     `
   }
 }

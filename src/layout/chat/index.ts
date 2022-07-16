@@ -1,5 +1,8 @@
 import Handlebars from 'handlebars'
-import chatLayoutTpl from './chat.hbs'
 import './chat.scss'
 
-Handlebars.registerPartial('ChatLayout', chatLayoutTpl)
+Handlebars.registerPartial('ChatLayout', `
+  <div class="chat-wrapper">
+      {{> @partial-block }}
+  </div>
+`)

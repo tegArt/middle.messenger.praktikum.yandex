@@ -11,7 +11,7 @@ export default class EventBus {
     this.listeners = {}
   }
 
-  on(event, callback) {
+  on(event: string, callback: CallbackFunction) {
     if (!this.listeners[event]) {
       this.listeners[event] = []
     }
@@ -19,17 +19,17 @@ export default class EventBus {
     this.listeners[event].push(callback)
   }
 
-  off(event, callback) {
+  off(event: string, callback: CallbackFunction) {
     if (!this.listeners[event]) {
-      throw `Нет события ${event}`
+      throw new Error(`Нет события ${event}`)
     }
 
     this.listeners[event] = this.listeners[event].filter((item) => item !== callback)
   }
 
-  emit(event, ...args) {
+  emit(event: string, ...args: any) {
     if (!this.listeners[event]) {
-      throw `Нет события ${event}`
+      throw new Error(`Нет события ${event}`)
     }
 
     this.listeners[event].forEach((callback) => callback(...args))

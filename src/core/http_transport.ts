@@ -66,16 +66,18 @@ export default class HTTPTransport {
 
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest()
-      const errorHandler = (error) => {
+      const errorHandler = (error: Object) => {
         reject(error)
       }
 
-      xhr.open(method, url)
+      xhr.open(<string>method, url)
       xhr.timeout = timeout
 
-      Object.keys(headers).forEach((key) => {
-        xhr.setRequestHeader(key, headers[key])
-      })
+      if (headers) {
+        Object.keys(headers).forEach((key) => {
+          xhr.setRequestHeader(key, headers[key])
+        })
+      }
 
       xhr.onload = () => {
         resolve(xhr)

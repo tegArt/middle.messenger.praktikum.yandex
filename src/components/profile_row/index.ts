@@ -13,8 +13,8 @@ export default class ProfileRow extends Component {
 
   render(): string {
     return `
-      <span class="profile-label">{{label}}</span>
-      <span class="profile-value">{{value}}</span>
+      <span class="profile-label">{{ label }}</span>
+      <span class="profile-value">{{ value }}</span>
     `
   }
 }

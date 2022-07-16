@@ -5,7 +5,7 @@ interface HeadingProps {
   tag: 'h1' | 'h2',
   text: string,
   className?: string,
-  events: Object
+  events?: Object
 }
 
 export default class Heading extends Component {

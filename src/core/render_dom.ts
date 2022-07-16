@@ -1,7 +1,13 @@
-export function render(query, component) {
+import Component from './component'
+
+export function render(query: string, component: Component) {
   const root = document.querySelector(query)
 
-  root.appendChild(component.getContent())
+  if (!root) {
+    return
+  }
+
+  root.replaceWith(component.getContent())
   component.dispatchComponentDidMount()
 
   return root

@@ -1,10 +1,9 @@
 import EventBus from './event_bus'
 import Handlebars from 'handlebars'
 import { v4 as makeUUID } from 'uuid'
-import '../helpers'
 
 interface Props {
-  [key: string]: string | any
+  [key: string | symbol]: Object | string | boolean | null
 }
 
 interface Children {
@@ -12,7 +11,7 @@ interface Children {
 }
 
 interface PropsAndChildren {
-  [key: string]: string | any
+  [key: string]: Object | string | boolean | null | Component
 }
 
 interface Meta {
@@ -43,7 +42,7 @@ export default class Component {
 
     this._meta = {
       tagName,
-      props,
+      props
     }
     this._id = makeUUID()
 
@@ -54,7 +53,7 @@ export default class Component {
     this.EventBus.emit(Component.EVENTS.INIT)
   }
 
-  _getChildren(propsAndChildren) {
+  _getChildren(propsAndChildren: PropsAndChildren) {
     const children = {}
     const props = {}
 
@@ -62,7 +61,25 @@ export default class Component {
       if (value instanceof Component) {
         children[key] = value
       } else {
-        props[key] = value
+        if (Array.isArray(value)) {
+          value.forEach((item, index) => {
+            if (item instanceof Component) {
+              if (!children[key]) {
+                children[key] = []
+              }
+
+              children[key][index] = item
+            } else {
+              if (!props[key]) {
+                props[key] = []
+              }
+
+              props[key][index] = value
+            }
+          })
+        } else {
+          props[key] = value
+        }
       }
     })
 
@@ -90,7 +107,13 @@ export default class Component {
     this.componentDidMount()
 
     Object.values(this.children).forEach(child => {
-      child.dispatchComponentDidMount()
+      if (Array.isArray(child)) {
+        child.forEach((arrayChild) => {
+          arrayChild.dispatchComponentDidMount()
+        })
+      } else {
+        child.dispatchComponentDidMount()
+      }
     })
   }
 
@@ -101,17 +124,17 @@ export default class Component {
     this.EventBus.emit(Component.EVENTS.FLOW_CDM)
   }
 
-  _componentDidUpdate(oldProps, newProps) {
+  _componentDidUpdate(oldProps: Object, newProps: Object) {
     this.componentDidUpdate(oldProps, newProps)
     this.EventBus.emit(Component.EVENTS.FLOW_RENDER)
   }
 
-  componentDidUpdate(oldProps: unknown, newProps: unknown) {
-    console.log(`${oldProps}=>${newProps}`)
+  // @ts-ignore
+  componentDidUpdate(oldProps: Object, newProps: Object) {
     return true
   }
 
-  setProps = (nextProps) => {
+  setProps = (nextProps: Object) => {
     if (!nextProps) {
       return
     }
@@ -130,31 +153,51 @@ export default class Component {
     this._element.innerHTML = ''
 
     if (this.props.className) {
-      this._element.className = this.props.className
+      this._element.className = <string>this.props.className
     }
 
     this._element.appendChild(template)
     this._addEvents()
   }
 
-  compile(template, props) {
+  compile(template: string, props: Props) {
     const fragment = this._createDocumentElement('template')
     const templateForStubs = Handlebars.compile(template)
     const propsAndStubs = { ...props }
 
     Object.entries(this.children).forEach(([key, child]) => {
-      propsAndStubs[key] = `<div data-id="${child._id}"></div>`
+      if (Array.isArray(child)) {
+        propsAndStubs[key] = ''
+
+        child.forEach((arrayChild) => {
+          propsAndStubs[key] = `${propsAndStubs[key]} <div data-id="${arrayChild._id}"></div>`
+        })
+      } else {
+        propsAndStubs[key] = `<div data-id="${child._id}"></div>`
+      }
     })
 
     fragment.innerHTML = templateForStubs(propsAndStubs)
 
     Object.values(this.children).forEach(child => {
-      const stub = fragment.content.querySelector(`[data-id="${child._id}"]`)
-
-      stub.replaceWith(child.getContent())
+      if (Array.isArray(child)) {
+        child.forEach((arrayChild) => {
+          this.replaceStub(fragment, arrayChild)
+        })
+      } else {
+        this.replaceStub(fragment, child)
+      }
     })
 
     return fragment.content
+  }
+
+  replaceStub(fragment: HTMLElement, component: Component) {
+    const stub = fragment.content.querySelector(`[data-id="${component._id}"]`)
+
+    if (stub) {
+      stub.replaceWith(component.getContent())
+    }
   }
 
   render() {
@@ -165,7 +208,7 @@ export default class Component {
     return this.element
   }
 
-  _makePropsProxy(props) {
+  _makePropsProxy(props: Props) {
     return new Proxy(props, {
       get: (target, prop) => {
         const value = target[prop]
@@ -177,10 +220,9 @@ export default class Component {
         if (target[prop] !== value) {
           target[prop] = value
           this.EventBus.emit(Component.EVENTS.FLOW_CDU, oldProps, target)
-          return true
         }
 
-        return false
+        return true
       },
       deleteProperty: () => {
         throw new Error('Нет доступа')
@@ -188,10 +230,8 @@ export default class Component {
     })
   }
 
-  _createDocumentElement(tagName) {
-    const element = document.createElement(tagName)
-
-    return element
+  _createDocumentElement(tagName: string) {
+    return document.createElement(tagName)
   }
 
   _addEvents() {

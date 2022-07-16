@@ -1,5 +1,10 @@
 import Handlebars from 'handlebars'
-import mainLayoutTpl from './main.hbs'
 import './main.scss'
 
-Handlebars.registerPartial('MainLayout', mainLayoutTpl)
+Handlebars.registerPartial('MainLayout', `
+  <div class="global-centered-wrapper">
+      <div class="global-centered-inner">
+          {{> @partial-block }}
+      </div>
+  </div>
+`)
