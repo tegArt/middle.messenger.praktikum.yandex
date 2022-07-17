@@ -61,21 +61,13 @@ export default class Component {
       if (value instanceof Component) {
         children[key] = value
       } else {
-        if (Array.isArray(value)) {
+        if (Array.isArray(value) && value[0] instanceof Component) {
           value.forEach((item, index) => {
-            if (item instanceof Component) {
-              if (!children[key]) {
-                children[key] = []
-              }
-
-              children[key][index] = item
-            } else {
-              if (!props[key]) {
-                props[key] = []
-              }
-
-              props[key][index] = value
+            if (!children[key]) {
+              children[key] = []
             }
+
+            children[key][index] = item
           })
         } else {
           props[key] = value
