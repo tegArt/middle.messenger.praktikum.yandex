@@ -35,5 +35,8 @@
 
 Реализован валидатор
 
-### PR
+### PR 1 спринт
+https://github.com/tegArt/middle.messenger.praktikum.yandex/pull/1
+
+### PR 2 спринт
 https://github.com/tegArt/middle.messenger.praktikum.yandex/pull/2
