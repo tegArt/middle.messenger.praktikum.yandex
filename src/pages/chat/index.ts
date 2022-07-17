@@ -3,7 +3,8 @@ import ProfileLink from '../../components/profile_link'
 import Search from '../../components/search'
 import ChatsGroup from '../../components/chats_group'
 
-export default class ChatList extends Component {
+//ToDo: слить Chat и ChatList в один компонент, конкретный чат подключать из страницы со списком
+export default class Chat extends Component {
   constructor() {
     const profileLink = new ProfileLink()
 
@@ -19,6 +20,7 @@ export default class ChatList extends Component {
       chats: [
         {
           id: 1,
+          isActive: true,
           title: 'Чат с длиннющим названием в несколько строк',
           lastMessage: 'Вы: Кто-то задвинул длинный спич на несколько страниц задвинул длинный спич на несколько страниц',
           avatarUrl: '/img/ava.png',
@@ -68,7 +70,7 @@ export default class ChatList extends Component {
         </aside>
 
         <main class="chat-area -empty">
-            <p>Выберите чат чтобы отправить сообщение</p>
+            <p>Выберите вапвыпаение</p>
         </main>
       {{/ChatLayout}}
     `

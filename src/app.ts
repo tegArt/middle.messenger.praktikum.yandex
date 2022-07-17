@@ -11,6 +11,8 @@ import SignUp from './pages/sign_up'
 import ChangePassword from './pages/change_password'
 import EditProfile from './pages/edit_profile'
 import Profile from './pages/profile'
+import ChatList from './pages/chat_list'
+import Chat from './pages/chat'
 
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)

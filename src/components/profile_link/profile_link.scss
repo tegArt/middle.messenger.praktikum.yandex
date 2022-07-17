@@ -1,0 +1,19 @@
+.profile {
+  &-link {
+    margin: 16px 0;
+    padding: 0 10px;
+    text-align: right;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
