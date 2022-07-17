@@ -1,15 +1,15 @@
 .chat-message {
   position: relative;
   max-width: 70%;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   padding: 12px 12px 26px;
   background: #f8f8f8;
-  border-radius: 0 16px 16px 16px;
+  border-radius: 0 16px 16px;
 
   &.-own {
     align-self: flex-end;
     background: #ebf3ff;
-    border-radius: 16px 16px 0 16px;
+    border-radius: 16px 16px 0;
   }
 
   &-date {
