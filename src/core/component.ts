@@ -54,8 +54,8 @@ export default class Component {
   }
 
   _getChildren(propsAndChildren: PropsAndChildren) {
-    const children = {}
-    const props = {}
+    const children: any = {}
+    const props: any = {}
 
     Object.entries(propsAndChildren).forEach(([key, value]) => {
       if (value instanceof Component) {
