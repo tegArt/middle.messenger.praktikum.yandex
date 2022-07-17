@@ -2,9 +2,14 @@ import Component from '../../core/component'
 import ProfileLink from '../../components/profile_link'
 import Search from '../../components/search'
 import ChatsGroup from '../../components/chats_group'
+import Chat from '../../components/chat'
+
+interface ChatListProps {
+  chatId?: number
+}
 
 export default class ChatList extends Component {
-  constructor() {
+  constructor(props: ChatListProps = {}) {
     const profileLink = new ProfileLink()
 
     const search = new Search({
@@ -19,6 +24,7 @@ export default class ChatList extends Component {
       chats: [
         {
           id: 1,
+          isActive: !!props.chatId,
           title: 'Чат с длиннющим названием в несколько строк',
           lastMessage: 'Вы: Кто-то задвинул длинный спич на несколько страниц задвинул длинный спич на несколько страниц',
           avatarUrl: '/img/ava.png',
@@ -48,14 +54,19 @@ export default class ChatList extends Component {
       ]
     })
 
-    const props = {
+    const chat = new Chat({
+      id: props.chatId
+    })
+
+    const innerProps = {
       className: 'page',
       profileLink,
       search,
-      chatList
+      chatList,
+      chat
     }
 
-    super('div', props)
+    super('div', {...props, ...innerProps})
   }
 
   render(): string {
@@ -67,9 +78,7 @@ export default class ChatList extends Component {
           {{{ chatList }}}
         </aside>
 
-        <main class="chat-area -empty">
-            <p>Выберите чат чтобы отправить сообщение</p>
-        </main>
+        {{{ chat }}}
       {{/ChatLayout}}
     `
   }

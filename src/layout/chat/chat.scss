@@ -11,25 +11,4 @@
     background: #f8fafd;
     overflow: auto;
   }
-
-  &-area {
-    flex: 1 1 100%;
-    position: relative;
-    padding: 0 28px;
-    overflow: hidden;
-
-    &.-empty {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  &-history {
-    height: calc(100% - 56px);
-  }
-
-  &-actions {
-    padding: 12px 0;
-  }
 }

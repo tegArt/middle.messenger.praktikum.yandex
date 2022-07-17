@@ -12,7 +12,6 @@ import ChangePassword from './pages/change_password'
 import EditProfile from './pages/edit_profile'
 import Profile from './pages/profile'
 import ChatList from './pages/chat_list'
-import Chat from './pages/chat'
 
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)
@@ -39,7 +38,9 @@ switch (page) {
     pageComponent = new ChatList()
     break
   case 'chat':
-    pageComponent = new Chat()
+    pageComponent = new ChatList({
+      chatId: 1
+    })
     break
   case 'sign-up':
     pageComponent = new SignUp()
