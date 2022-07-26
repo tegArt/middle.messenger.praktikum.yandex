@@ -2,7 +2,17 @@
 
 - [Макеты](https://www.figma.com/file/hbVBhopB0YdLJWQAlecsCY/Messenger?node-id=0%3A1)
 - [Прототип](https://www.figma.com/proto/hbVBhopB0YdLJWQAlecsCY/Messenger?node-id=9%3A25&scaling=contain&page-id=0%3A1&starting-point-node-id=9%3A25)
-- [Потискать вживую](http://es2022.ru/)
+
+### Потискать вживую http://es2022.ru/
+- [страница входа](http://es2022.ru/)
+- [регистрации](http://es2022.ru/?page=sign-up)
+- [профиль](http://es2022.ru/?page=profile)
+- [редактирование профиля](http://es2022.ru/?page=edit-profile)
+- [смена пароля](http://es2022.ru/?page=change-password)
+- [список чатов](http://es2022.ru/?page=chat-list)
+- [выбранный чат](http://es2022.ru/?page=chat)
+- [404](http://es2022.ru/?page=error-404)
+- [500](http://es2022.ru/?page=error-500)
 
 ## Установка и запуск
 
@@ -11,11 +21,21 @@
 - `npm run start` — запуск с Express
 - `npm run build` — сборка стабильной версии
 
-## Спринт 1
+## Спринт 2
 
 ### Использование шаблонизатора и компонентного подхода
 
-Сборщик parcel, шаблонизатор handlebars, препроцессор SASS, локально статика отдается через Express.
+Создан ключевой компонент, добавлен eventbus, подготовлен http_transport
+
+"Внедрен" какой-никакой typescript
+
+Настроены линтеры js,ts и scss, добавлен конфиг для ide
+
+Все страницы и компоненты переведены с лысого hbs на ключевой компонент
+
+Добавлена страница чата со списком чатов
+
+Реализован валидатор
 
 ### PR 1 спринт
 https://github.com/tegArt/middle.messenger.praktikum.yandex/pull/1
